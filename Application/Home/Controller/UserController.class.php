@@ -181,7 +181,7 @@ class UserController extends Controller {
 
         $rule = array(
 //        array('user', 'require', '用户名不得为空！', 0, 'regex', 3),
-            array('email', 'email', '邮箱格式不正确', 0, 'regex', 3),
+//            array('email', 'email', '邮箱格式不正确', 0, 'regex', 3),
 //        array('user', 'url', 'url格式不合法'),
 //        array('user', 'currency', '货币格式不正确！'),
 //        array('user', 'zip', '邮政编码必须是六位正整数！'),
@@ -202,19 +202,36 @@ class UserController extends Controller {
 //        array('user', '2015-1-1,2015-10-10', '表单提交不在有效期内！', 0, 'expire'),
 //        array('user', '128.0.0.1', '您的ip没有被允许！', 0, 'ip_allow'),
 //        array('user', '127.0.0.1', '您的ip被禁止！', 0, 'ip_deny'),
-        array('user', 'checkLength', '用户名长度必须在3-5之间', 0, 'callback'),
+//        array('user', 'checkLength', '用户名长度必须在3-5之间', 0, 'callback'),
 //            array('user', 'checkLength', '用户名长度必须在3-5之间', 0, 'function')
         );
 
-        $user = D('User');
-        $data['user']  = 'lisi';
-        $data['email'] = 'fdsa';
+//        $user = D('User');
+//        $data['id'] = 2;
+//        $data['user']  = '';
+//        $data['email'] = '390040032@qq.com';
+//        if($user->validate($rule)->create($data)){
+////            $user->add();
+//            $user->save();
+//        }else{
+//            print_r($user->getError());
+//        }
 
-        if($user->validate($rule)->create($data)){
-            echo '验证通过';
+        $rule = array(
+            array('user', 'email', 3, 'field'),
+        );
+
+        $user = M('User');
+        $data['id'] = 2;
+        $data['user']  = '';
+        $data['email'] = '390040032@qq.com';
+        if($user->auto($rule)->create($data)){
+//            $user->add();
+            $user->save();
         }else{
             print_r($user->getError());
         }
     }
+
 
 } 

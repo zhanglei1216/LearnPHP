@@ -21,7 +21,7 @@ define('APP_DEBUG',True);
 define('APP_PATH','./Application/');
 
 //设置目录生成的文件
-define('DIR_SECURE_FILENAME', 'index.html');
+//define('DIR_SECURE_FILENAME', 'index.html');
 
 ////设置目录文件内容
 //define('DIR_SECURE_CONTENT', '访问路径错误！');

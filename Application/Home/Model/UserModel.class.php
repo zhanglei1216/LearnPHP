@@ -64,8 +64,8 @@ class UserModel extends Model {
      *                3.self::MODEL_BOTH 或 3 全部情况下验证（默认）
      *（后三个可以不写）
      */
-//    protected $_validate = array(
-////        array('user', 'require', '用户名不得为空！', 0, 'regex', 3),
+    protected $_validate = array(
+//        array('user', 'require', '用户名不得为空！', 0, 'regex', 3),
 //        array('email', 'email', '邮箱格式不正确', 0, 'regex', 3),
 ////        array('user', 'url', 'url格式不合法'),
 ////        array('user', 'currency', '货币格式不正确！'),
@@ -88,10 +88,33 @@ class UserModel extends Model {
 ////        array('user', '128.0.0.1', '您的ip没有被允许！', 0, 'ip_allow'),
 ////        array('user', '127.0.0.1', '您的ip被禁止！', 0, 'ip_deny'),
 //        array('user', 'checkLength', '用户名长度必须在3-5之间', 0, 'callback'),
-////        array('user', 'checkLength', '用户名长度必须在3-5之间', 0, 'function')
-//    );
+//        array('user', 'checkLength', '用户名长度必须在3-5之间', 0, 'function')
+    );
 
     protected $patchValidate = true;
+
+
+    /*自动完成*/
+    /**
+     * 第一个是字段名
+     * 第二个是完成规则
+     * 第三个是完成条件 1.self::MODEL_INSERT 或 1 新增数据时验证
+     *                2.self::MODEL_UPDATE 或 2 编辑数据时验证
+     *                3.self::MODEL_BOTH 或 3 全部情况下验证（默认）
+     * 第四个为附加规则 function（函数完成，定义的验证规则是一个函数名） callback（方法完成，定义的验证规则是当前模型类的一个方法）
+     * string（字符串 默认） field(用其他字段填充) ignore (空规则忽略)
+     */
+    protected $_auto = array(
+        array('cout', '1', 3, 'string'),
+//        array('user', 'sha1', 3, 'function'), //PHP内置函数
+//        array('user', 'email', '3', 'field'),
+//        array('user', 'addPrefix', 3, 'callback', '_'),
+        array('user', '', 2, 'ignore'),
+    );
+
+    protected function addPrefix($str, $prefix){
+        return $prefix.$str;
+    }
 
     public function __construct(){
         parent::__construct();

@@ -79,4 +79,34 @@ return array(
     //页面调试工具
     'SHOW_PAGE_TRACE' => ture,
 
+    //修改视图目录
+    'DEFAULT_V_LAYER' => 'View',
+
+    //修改模板文件的后缀
+//    'TMPL_TEMPLATE_SUFFIX' => '.tpl',
+
+    //用下划线修改目录层次
+//    'TMPL_FILE_DEPR' => '_',
+
+    //设置外部的模板目录
+//    'VIEW_PATH'=>'./Public/',
+
+    //设置默认主题
+    'DEFAULT_THEME' => 'Default',
+
+    //设置定界符 （定界符和$符之间不能有空格）
+    'TMPL_L_DELIM' => '<{',
+    'TMPL_R_DELIM' => '}>',
+
+
+    //模板布局
+//    'LAYOUT_ON' => true,
+//    'LAYOUT_NAME' => 'Public/layout',
+//    'TMPL_LAYOUT_ITEM' => '{__REPLACE__}',
+
+//    'TMPL_PARSE_STRING' => array(
+//        '__PUBLIC_' => '/Common',
+//        '__UPLOAD_' => '/Uploads',
+//    ),
+
 );
