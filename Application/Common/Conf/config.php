@@ -109,4 +109,52 @@ return array(
 //        '__UPLOAD_' => '/Uploads',
 //    ),
 
+//    //将外置标签设置为内置标签
+//    'TAGLIB_BUILD_IN' => 'cx,html',
+    //外置标签预加载
+    'TAGLIB_PRE_LOAD' => 'html,test',
+
+    //设置可访问模块
+//    'MODULE_ALLOW_LIST' => array('Home', 'Admin'),
+
+    //设置默认模块
+//    'DEFAULE_MODULE' => 'Home',
+
+    //启用路由
+//    'URL_ROUTER_ON' => true,
+//    'URL_ROUTE_RULES' => array(
+//        'r' => 'Route/route', //静态路由
+//        'r/:id' => 'Route/route',//静态和动态路由
+//        'r/:type/:attr/:list' => 'Route/route',//多参数
+//        ':r/:type/:attr/:list' => 'Route/route',//全动态路由
+//        'r/:id\d' => 'Route/route', //规则路由必须输入的是数字
+//        'r/:id\d{2,3}|md5' => 'Route/route', //支持函数 md5加密
+//        'r/[:id\d]' => 'Route/route', //可选参数
+//        'r/:id\d$' => 'Route/route', //规则路由，后面不可以加东西
+//        '/^r\/(\d{2})$/' => 'Route/route?id=:1', //正则路由
+//        '/^r\/(\d{2})$/' => 'Route/route?id=:1|md5', //正则路由支持函数
+
+        //闭包支持
+//        'r/:id\d' => function($id){
+//            echo $id;
+//        },
+
+//    ),
+
+    //配置静态路由
+//    'URL_MAP_RULES' => array(
+//        'R/r' => 'Route/route',
+//    ),
+
+    //开启不区分大小写模式
+//    'URL_CASE_INSENSITIVE' => true,
+
+
+    //设置伪静态后缀，默认为html, 如果设置为空’‘那么就可以是任意后缀
+//    'URL_HTML_SUFFIX' => 'shtml',
+
+    //重写模式
+    'URL_MODEL' => 1,
+    'URL_MODEL' => 2,  //去掉U()生成url中的index.php
+
 );
